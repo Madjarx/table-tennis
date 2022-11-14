@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+/* Commonly used styling throughout the application */
+
+
+// #region Fonts
+@font-face {
+  font-family: "Proxima-Soft";
+  src: url("./assets/fonts/ProximaSoft-Medium.ttf");
+}
+// #endregion
+
+
+// #region Colors  -  (this should really say "primary", "secondary" etc.)
+$background-light: #eff3fa;
+$white: #ffffff;
+$black: #000000;
+$light-purple: #8286ff;
+$dark-purple: #4922ff;
+$light-blue: #5497fc;
+$dark-blue: #1b2559;
+$light-grey: #707eae;
+// #endregion
+
+
+// #region body
+body {
+    font-family: 'Proxima-Soft' !important;
+    background-color: $background-light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+// #endregion
+
+
+// #region Styles
+@mixin boxShadow {
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  &:hover {
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.6);
+  }
+};
+
+@mixin gradientPurple {
+    background: radial-gradient(100% 682.41% at 4.04% 0%, $light-purple 0%, $dark-purple 100%)
+};
+
+@mixin container($inputWidth: null, $inputHeight: null) {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 20px;
+    @if ($inputWidth != null) {
+        width: $inputWidth
+    } 
+    @else {
+        width: 200px;
+    }
+
+    @if ($inputHeight != null) {
+        height: $inputHeight
+    } 
+    @else {
+        height: 200px;
+    }
+}
+// #endregion
+
