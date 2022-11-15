@@ -1,0 +1,15 @@
+@import '../../../styles.scss';
+
+.container {
+    @include container;
+    @include boxShadow;
+    @include centeredColumn;
+}
+
+.input {
+    @include boxShadow;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    outline: none;
+}

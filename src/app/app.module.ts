@@ -16,8 +16,10 @@ import {
   PlayerListComponent,
   MatchListComponent,
   CreatePlayerComponent,
-  CreateMatchComponent
+  CreateMatchComponent,
+  NavigationComponent
 } from './components/index';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {
     PlayerListComponent,
     MatchListComponent,
     CreateMatchComponent,
-    CreatePlayerComponent
+    CreatePlayerComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

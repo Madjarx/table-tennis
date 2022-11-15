@@ -1,13 +1,11 @@
 /* Commonly used styling throughout the application */
 
-
 // #region Fonts
 @font-face {
   font-family: "Proxima-Soft";
   src: url("./assets/fonts/ProximaSoft-Medium.ttf");
 }
 // #endregion
-
 
 // #region Colors  -  (this should really say "primary", "secondary" etc.)
 $background-light: #eff3fa;
@@ -20,47 +18,67 @@ $dark-blue: #1b2559;
 $light-grey: #707eae;
 // #endregion
 
-
 // #region body
 body {
-    font-family: 'Proxima-Soft' !important;
-    background-color: $background-light;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: "Proxima-Soft" !important;
+  background-color: $background-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: $dark-blue;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+  color: $light-grey;
 }
 // #endregion
-
 
 // #region Styles
-@mixin boxShadow {
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
-  &:hover {
-    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.6);
+@mixin boxShadow($reactive: null) {
+  @if ($reactive != null) {
+    &:hover {
+      box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.6);
+    }
   }
-};
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+}
 
 @mixin gradientPurple {
-    background: radial-gradient(100% 682.41% at 4.04% 0%, $light-purple 0%, $dark-purple 100%)
-};
-
+  background: radial-gradient(
+    100% 682.41% at 4.04% 0%,
+    $light-purple 0%,
+    $dark-purple 100%
+  );
+}
+// is there something ike JSdoc for scss?
 @mixin container($inputWidth: null, $inputHeight: null) {
-    background-color: $white;
-    border-radius: 20px;
-    padding: 20px;
-    @if ($inputWidth != null) {
-        width: $inputWidth
-    } 
-    @else {
-        width: 200px;
-    }
+  background-color: $white;
+  border-radius: 20px;
+  padding: 20px;
+  @if ($inputWidth != null) {
+    width: $inputWidth;
+  }
+  @if ($inputHeight != null) {
+    height: $inputHeight;
+  }
+}
 
-    @if ($inputHeight != null) {
-        height: $inputHeight
-    } 
-    @else {
-        height: 200px;
-    }
+@mixin centeredColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin centeredRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 // #endregion
-

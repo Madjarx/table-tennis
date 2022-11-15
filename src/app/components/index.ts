@@ -6,3 +6,5 @@ export { MatchListComponent as MatchListComponent } from "./match-list/match-lis
 
 export { CreatePlayerComponent as CreatePlayerComponent } from "./create-player/create-player.component";
 export { CreateMatchComponent as CreateMatchComponent } from "./create-match/create-match.component";
+
+export {NavigationComponent as NavigationComponent} from './navigation/navigation.component';

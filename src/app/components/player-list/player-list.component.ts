@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { PlayersService } from 'src/app/services/players.service';
 
 @Component({
   selector: 'app-player-list',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player-list.component.scss']
 })
 export class PlayerListComponent implements OnInit {
+  players: any[] = [];
 
-  constructor() { }
+  constructor(private service: PlayersService) { }
 
   ngOnInit(): void {
+    // this.service.getAllPlayers().subscribe((players) => this.players = players)
+  };
+
+  ngOnDestroy(): void {
+    
   }
 
 }
