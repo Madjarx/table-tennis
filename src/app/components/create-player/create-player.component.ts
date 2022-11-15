@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayersService } from 'src/app/services/players.service';
 
 @Component({
   selector: 'app-create-player',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePlayerComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private service: PlayersService) { 
   }
 
+  ngOnInit(): void {
+
+  }
+
+  onSubmit(name: string) {
+    console.log("Logging the name " + name)
+    this.service.createPlayer(name);
+  };
 }

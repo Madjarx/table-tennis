@@ -1,14 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-// import { MatchComponent } from './components/match/match.component';
-// import { PlayerListComponent } from './components/player-list/player-list.component';
-// import { MatchListComponent } from './components/match-list/match-list.component';
-// import { CreateMatchComponent } from './components/create-match/create-match.component';
-// import { CreatePlayerComponent } from './components/create-player/create-player.component';
 
 import {
   PlayerComponent,
@@ -19,6 +14,10 @@ import {
   CreateMatchComponent,
   NavigationComponent
 } from './components/index';
+import { MatchesService } from './services/matches.service';
+import { PlayersService } from './services/players.service';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 
 @NgModule({
@@ -30,13 +29,20 @@ import {
     MatchListComponent,
     CreateMatchComponent,
     CreatePlayerComponent,
-    NavigationComponent
+    NavigationComponent,
+    HomepageComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    PlayersService,
+    MatchesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

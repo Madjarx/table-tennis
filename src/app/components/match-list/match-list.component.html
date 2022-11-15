@@ -1,1 +1,13 @@
-<p>match-list works!</p>
+<h1>List of Matches</h1>
+<app-create-match></app-create-match>
+<div *ngFor="let match of matches">
+    <div>
+        <span>{{match.player1}}</span>
+        <br>
+        <span>{{match.player2}}</span>
+        <br>
+        <div *ngFor="let score of match.score">
+            <span>{{score}}</span>
+        </div>
+    </div>
+</div>

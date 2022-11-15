@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PlayersService } from 'src/app/services/players.service';
+import { PlayerModel } from 'src/app/utils/dataModels';
 
 @Component({
   selector: 'app-player-list',
@@ -7,16 +8,13 @@ import { PlayersService } from 'src/app/services/players.service';
   styleUrls: ['./player-list.component.scss']
 })
 export class PlayerListComponent implements OnInit {
-  players: any[] = [];
+  players: Array<PlayerModel> = [];
 
   constructor(private service: PlayersService) { }
 
   ngOnInit(): void {
-    // this.service.getAllPlayers().subscribe((players) => this.players = players)
+    // this.service.getAllPlayers().subscribe((players: any) => this.players = players)
+    this.players = this.service.getAllPlayers()
+    console.log(this.players)
   };
-
-  ngOnDestroy(): void {
-    
-  }
-
 }

@@ -1,1 +1,39 @@
-<p>create-match works!</p>
+<div class="container">
+    <h1>Create New Match</h1>
+
+    <form #createMatch="ngForm" (ngSubmit)="onSubmit(createMatch.value)">
+
+      <p>Pick Player1</p>
+      <select name="player1" ngModel>
+        <option *ngFor="let player of players">{{player.name}}</option>
+      </select>
+
+      <p>Pick Player2</p>
+      <select name="player2" ngModel>
+        <option *ngFor="let player of players">{{player.name}}</option>
+      </select>
+      <br />
+      
+      <div>
+        <div>
+          <p>player1</p>
+          <input type="text" name="score1" ngModel>
+          <input type="text" name="score3" ngModel>
+          <input type="text" name="score5" ngModel>
+          <input type="text" name="score7" ngModel>
+          <input type="text" name="score9" ngModel>
+        </div>
+        <br>
+        <div>
+          <p>player2</p>
+          <input type="text" name="score2" ngModel>
+          <input type="text" name="score4" ngModel>
+          <input type="text" name="score6" ngModel>
+          <input type="text" name="score8" ngModel>
+          <input type="text" name="score10" ngModel>
+        </div>
+      </div>
+      <br />
+      <input type="submit" value="submit">
+    </form>
+</div>

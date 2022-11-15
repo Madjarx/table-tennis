@@ -8,3 +8,5 @@ export { CreatePlayerComponent as CreatePlayerComponent } from "./create-player/
 export { CreateMatchComponent as CreateMatchComponent } from "./create-match/create-match.component";
 
 export {NavigationComponent as NavigationComponent} from './navigation/navigation.component';
+export {HomepageComponent as HomepageComponent} from './homepage/homepage.component';
+export {NotfoundComponent as NotfoundComponent} from './notfound/notfound.component';
