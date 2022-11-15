@@ -6,7 +6,6 @@ import { PlayerModel, MatchModel } from '../utils/dataModels';
 })
 export class PlayersService {
   players: Array<PlayerModel> = [];
-  // players: Observable<PlayerModel[]> = [];
 
   constructor() {}
 
@@ -15,9 +14,7 @@ export class PlayersService {
   };
 
   getAllPlayers() {
-    // return new Observable()
     return this.players;
-    // return ;
   };
 
   refresh() {
@@ -31,9 +28,6 @@ export class PlayersService {
   }
   
   reportMatch(match: MatchModel) {
-    // this.players.forEach(player => {
-    //   player.won++;
-    // });
     this.refresh();
   }
 
