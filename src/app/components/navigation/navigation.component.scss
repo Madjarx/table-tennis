@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+
+.container {
+    @include boxShadow;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include container;
+}

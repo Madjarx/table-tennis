@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatchesService } from 'src/app/services/matches.service';
 import { PlayersService } from 'src/app/services/players.service';
 import { MatchModel } from 'src/app/utils/dataModels';
+import { convertToMatchModel, validateMatch} from 'src/app/utils/helpers';
 
 @Component({
   selector: 'app-create-match',
@@ -25,15 +26,18 @@ export class CreateMatchComponent implements OnInit {
   };
 
   onSubmit(inputData: any) {
-    console.log(inputData)
-    // this.validateInput(inputData);
-    // then pass it to the service
+    console.log(inputData);
+    this.newMatch = convertToMatchModel(inputData);
+    console.log(this.newMatch)
+    if (validateMatch(this.newMatch)) {
+      console.log('match is okay')
+    } else {
+      console.log('match is not so okay')
+    }
+    
   }
 
   validateInput(inputData: any) {
     
   };
-
-  // add default values of 0 to the rest
-  //check if player is null, if he is, say error
 }
